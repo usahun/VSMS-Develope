@@ -13,9 +13,9 @@ class VPPDViewController: UIViewController {
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var pageView: UIPageControl!
     
-    var imgArr = [  UIImage(named:"Dream2019"),
-                    UIImage(named:"Dream12019") ,
-                    UIImage(named:"Dream22019")]
+    var imgArr = [  UIImage(named:"Dream191"),
+                    UIImage(named:"Dream192") ,
+                    UIImage(named:"Dream193")]
     
     var timer = Timer()
     var counter = 0

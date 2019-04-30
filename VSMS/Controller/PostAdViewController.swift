@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PostImageModel1 {
+struct postImageModel {
     let image:  UIImage
 }
 
@@ -19,7 +19,7 @@ class PostAdViewController: UIViewController, UITableViewDataSource, UITabBarDel
     
     @IBOutlet private weak var collectionView: UICollectionView?
     
-    var postImages: Array<PostImageModel1> = []
+    var postImages: Array<postImageModel> = []
     
     let picker = UIImagePickerController()
     
@@ -41,7 +41,7 @@ class PostAdViewController: UIViewController, UITableViewDataSource, UITabBarDel
         setupView()
         
         for _ in 0...7 {
-            self.postImages.append(PostImageModel1(image: UIImage(named: "icons8-plus-math-50 (5)")!))
+            self.postImages.append(postImageModel(image: UIImage(named: "icons8-plus-math-50 (5)")!))
         }
     }
     //fucntion
@@ -100,7 +100,7 @@ extension PostAdViewController: UICollectionViewDataSource, UICollectionViewDele
         
         self.currentIndex = indexPath.row
         
-        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Allbume", message: "", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Open Camera", style: .default) { (alert) in
             self.picker.sourceType = .camera
             self.present(self.picker, animated: true, completion: nil)
@@ -123,4 +123,25 @@ extension PostAdViewController: UICollectionViewDataSource, UICollectionViewDele
         present(alertController, animated: true, completion: nil)
     }
     
+}
+
+extension PostAdViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let selectedImage: UIImage = info[.originalImage] as? UIImage {
+            
+            picker.dismiss(animated: true) {
+                self.tempImage = selectedImage
+                self.postImages[self.currentIndex] = postImageModel(image: selectedImage)
+                self.collectionView?.reloadData()
+            }
+            
+        }
+        
+        
+    }
 }
