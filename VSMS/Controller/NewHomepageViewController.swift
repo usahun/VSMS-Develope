@@ -12,6 +12,8 @@ import CoreLocation
 class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
     
+   
+    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +24,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        let cellnib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
+        tableView?.register(cellnib, forCellReuseIdentifier: "photo")
     
         
     }
@@ -60,13 +64,17 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         //assign button to navigationbar
         self.navigationItem.rightBarButtonItem = barButton
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "photo", for: indexPath)as! HomePageTableViewCell
+        return cell
     }
     
    
