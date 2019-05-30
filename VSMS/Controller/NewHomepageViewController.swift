@@ -26,20 +26,28 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         
         let cellnib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
         tableView?.register(cellnib, forCellReuseIdentifier: "photo")
-    
         
+        let menubutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(menutap))
+        self.navigationItem.leftBarButtonItem = menubutton
     }
+    
+    @objc func menutap(){
+        
+        print("Your tap")
+    }
+    
     private func setupNavigationBarItem(){
         
         let logo = UIImage(named: "HamburgarIcon")
         let menu = UIButton(type: .system)
         menu.setImage(logo, for: .normal)
+        
        // navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menu)
         menu.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         menu.tintColor = UIColor.lightGray
         
         //logo
-    let munebutton = UIBarButtonItem(customView: menu)
+    let menubutton = UIBarButtonItem(customView: menu)
     let logoImage = UIImage.init(named: "121logo")
     let logoImageView = UIImageView.init(image: logoImage)
     logoImageView.contentMode = .scaleAspectFit
@@ -51,7 +59,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
      let imageItem = UIBarButtonItem.init(customView: logoImageView)
      let negativeSpacer = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
       negativeSpacer.width = -25
-       navigationItem.leftBarButtonItems = [munebutton, imageItem]
+        
+       navigationItem.leftBarButtonItems = [menubutton, imageItem]
        
         let button = UIButton(type: .custom)
         //set image for button
