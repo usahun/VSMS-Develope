@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import SideMenuSwift
 
 
 @UIApplicationMain
@@ -27,9 +28,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,CLLocationManagerDelegate
 //        window?.makeKeyAndVisible()
         
        // LocationService.sharedInstance.delegate = self
+        
+        let contentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SideMenu")
+        
+        let menuViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "leftMenu")
+        
+        let sideMenuController = SideMenuController(
+            contentViewController: contentViewController,
+            menuViewController: menuViewController)
+       
+        
+//
+//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SideMenu") as! SideMenuController
+//
+        self.window?.rootViewController = sideMenuController
+        self.window?.makeKeyAndVisible()
+        
+        configureSideMenu()
         locationservice.delegate = self
         print(locationservice.lastLocation as Any)
         return true
+    }
+    
+    private func configureSideMenu() {
+        SideMenuController.preferences.basic.menuWidth = 240
+        SideMenuController.preferences.basic.defaultCacheKey = "0"
     }
 
     

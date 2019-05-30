@@ -8,12 +8,10 @@
 
 import UIKit
 import CoreLocation
+import SideMenuSwift
 
 class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
-    
-   
-    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,17 +24,18 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         
         let cellnib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
         tableView?.register(cellnib, forCellReuseIdentifier: "photo")
-        
-        let menubutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(menutap))
-        self.navigationItem.leftBarButtonItem = menubutton
+       // sideMenuController?.delegate = self as! SideMenuControllerDelegate
+        let menuBarButton = UIBarButtonItem(image: UIImage(named: "HamburgarIcon"), style: .done, target: self, action: #selector(menutap))
+//        let menubutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(menutap))
+        self.navigationItem.leftBarButtonItem = menuBarButton
     }
     
-    @objc func menutap(){
-        
+    @objc func menutap() {
+        sideMenuController?.revealMenu()
         print("Your tap")
     }
     
-    private func setupNavigationBarItem(){
+    private func setupNavigationBarItem() {
         
         let logo = UIImage(named: "HamburgarIcon")
         let menu = UIButton(type: .system)
