@@ -53,6 +53,8 @@
 		C40213A722574D08007920C4 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40213A222574D07007920C4 /* SearchResultController.swift */; };
 		C40213A822574D08007920C4 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40213A322574D08007920C4 /* HomePageController.swift */; };
 		C40213B522574D75007920C4 /* BalancedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40213B322574D75007920C4 /* BalancedContainer.swift */; };
+		C4210CCA229FB92C00BA9698 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4210CC9229FB92C00BA9698 /* TabBarController.swift */; };
+		C4210CCC229FBF5000BA9698 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4210CCB229FBF5000BA9698 /* MyNavigationController.swift */; };
 		D521AC89226F19E200BE534A /* alertMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521AC88226F19E200BE534A /* alertMessageViewController.swift */; };
 		D52D64552232736D00008156 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D64542232736D00008156 /* NewViewController.swift */; };
 		D54A83CC225465A900BA1634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A83CB225465A900BA1634 /* Assets.xcassets */; };
@@ -121,6 +123,8 @@
 		C40213A222574D07007920C4 /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		C40213A322574D08007920C4 /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		C40213B322574D75007920C4 /* BalancedContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalancedContainer.swift; sourceTree = "<group>"; };
+		C4210CC9229FB92C00BA9698 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C4210CCB229FBF5000BA9698 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		D521AC88226F19E200BE534A /* alertMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertMessageViewController.swift; sourceTree = "<group>"; };
 		D52D64542232736D00008156 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		D54A83CB225465A900BA1634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				D521AC88226F19E200BE534A /* alertMessageViewController.swift */,
 				869CF1962276F0800006D7F2 /* PostAdViewController.swift */,
 				86560C5D229CD1C900C5A21F /* NewHomepageViewController.swift */,
+				C4210CC9229FB92C00BA9698 /* TabBarController.swift */,
+				C4210CCB229FBF5000BA9698 /* MyNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				D54C48132242249D004FE033 /* RegisterController.swift in Sources */,
 				86B10329229C4C7A00192DAD /* HomeCollectionViewCell.swift in Sources */,
 				C402139A22574C9C007920C4 /* MenuController.swift in Sources */,
+				C4210CCA229FB92C00BA9698 /* TabBarController.swift in Sources */,
 				86626BAF229C480800FE25DD /* PhoneNumberHeader.swift in Sources */,
 				86626BBF229C496300FE25DD /* DeTailTableCell.swift in Sources */,
 				D5B6471E2255A91E00C113FF /* TablepostviewController.swift in Sources */,
@@ -479,6 +486,7 @@
 				D5D64F8F2236E41500A2D4E1 /* AccountDetail.swift in Sources */,
 				86B1032C229C4C7A00192DAD /* TablepostViewCell.swift in Sources */,
 				86DEBB09229E248D006C0DB2 /* PhotoSilderCollectionViewCell.swift in Sources */,
+				C4210CCC229FBF5000BA9698 /* MyNavigationController.swift in Sources */,
 				D54C4811224223BD004FE033 /* LoginController.swift in Sources */,
 				86626BB6229C491A00FE25DD /* CollectionTableViewCell.swift in Sources */,
 				D5BA49ED2255ECC100C61E9C /* TransferinfomationViewController.swift in Sources */,
@@ -653,7 +661,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N57Y6URRUJ;
+				DEVELOPMENT_TEAM = CN5W8SS7A9;
 				INFOPLIST_FILE = VSMS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -676,7 +684,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N57Y6URRUJ;
+				DEVELOPMENT_TEAM = CN5W8SS7A9;
 				INFOPLIST_FILE = VSMS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

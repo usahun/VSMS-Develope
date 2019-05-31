@@ -8,25 +8,28 @@
 
 import UIKit
 
-class HomePageTableViewCell: UITableViewCell {
+class HomePageTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    
 
     @IBOutlet weak var ImagePage: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.backgroundColor = UIColor.red
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 70, height: 80)
         layout.scrollDirection = .horizontal
         ImagePage.collectionViewLayout = layout
         
-        //collectionView?.dataSource = self
-        //collectionView?.delegate = self
+        ImagePage?.dataSource = self
+        ImagePage?.delegate = self
         ImagePage.clipsToBounds = true
         ImagePage.showsHorizontalScrollIndicator = false
         
-        let cellphoto = UINib(nibName: "PhotoSilderCollectionViewCell", bundle: nil)
-        ImagePage?.register(cellphoto, forCellWithReuseIdentifier: "PhotoSilderCollectionViewCell")
-        
+        let cellphoto = UINib(nibName: "PhotoSliderCollectionViewCell", bundle: nil)
+        ImagePage?.register(cellphoto, forCellWithReuseIdentifier: "PhotoSliding")
+//        
      
         // Initialization code
     }
@@ -37,4 +40,18 @@ class HomePageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoSliding", for: indexPath) as! PhotoSilderCollectionViewCell
+        cell.PhotoHome.image = UIImage(named: "121logo")
+        return cell
+        
+    }
 }

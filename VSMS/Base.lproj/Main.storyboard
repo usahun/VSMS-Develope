@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iiv-kF-lTM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rJ9-s4-tzm">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -3510,10 +3510,11 @@
             </objects>
             <point key="canvasLocation" x="-183" y="2398"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="opo-Iq-Neu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iiv-kF-lTM" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8U-QY-kMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="MyNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iiv-kF-lTM" customClass="MyNavigationController" customModule="VSMS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="toG-9a-pjt">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -3528,9 +3529,8 @@
                         <segue destination="htf-DK-hS7" kind="relationship" relationship="rootViewController" id="Efy-id-WbD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l8U-QY-kMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="2035"/>
+            <point key="canvasLocation" x="2368" y="1938"/>
         </scene>
         <!--New Homepage View Controller-->
         <scene sceneID="Hal-ln-eA8">
@@ -3548,43 +3548,44 @@
                                 <rect key="frame" x="76" y="0.0" width="205" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qyn-kM-Hoa">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="NKw-71-Wcs" firstAttribute="trailing" secondItem="qyn-kM-Hoa" secondAttribute="trailing" id="9na-E4-lNt"/>
-                            <constraint firstItem="qyn-kM-Hoa" firstAttribute="leading" secondItem="NKw-71-Wcs" secondAttribute="leading" id="cAT-xa-9wL"/>
-                            <constraint firstItem="NKw-71-Wcs" firstAttribute="bottom" secondItem="qyn-kM-Hoa" secondAttribute="bottom" id="qTy-Lk-0Am"/>
-                            <constraint firstItem="qyn-kM-Hoa" firstAttribute="top" secondItem="NKw-71-Wcs" secondAttribute="top" id="sg3-ll-boI"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NKw-71-Wcs"/>
                     </view>
                     <navigationItem key="navigationItem" id="rlA-EQ-qda"/>
-                    <connections>
-                        <outlet property="tableView" destination="qyn-kM-Hoa" id="zXH-PG-WJe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcV-Pu-cvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850.7246376811595" y="2034.7826086956522"/>
+            <point key="canvasLocation" x="3172" y="1863"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Dbg-YT-Zdn">
+            <objects>
+                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="rJ9-s4-tzm" customClass="TabBarController" customModule="VSMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ohm-k4-zbw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zl1-aw-YHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480" y="2001"/>
         </scene>
     </scenes>
     <resources>
         <image name="1" width="177" height="50"/>
         <image name="121logo" width="120" height="69"/>
         <image name="ArrowDown-50" width="50" height="50"/>
-        <image name="Camera" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Camera" width="33" height="33"/>
         <image name="Customer-white" width="25" height="25"/>
         <image name="EditUser-White" width="50" height="50"/>
         <image name="HamburgarIcon" width="25" height="25"/>
         <image name="Home-Active" width="25" height="25"/>
         <image name="Honda-Dream-black" width="620" height="450"/>
-        <image name="HondaClick2019" width="206.66667175292969" height="150"/>
-        <image name="HondaDream2019" width="206.66667175292969" height="150"/>
-        <image name="HondaPCX2019" width="206.66667175292969" height="150"/>
+        <image name="HondaClick2019" width="206" height="150"/>
+        <image name="HondaDream2019" width="206" height="150"/>
+        <image name="HondaPCX2019" width="206" height="150"/>
         <image name="Icon-Camera-20x20" width="20" height="20"/>
         <image name="Icon-Camera-20x20-1" width="20" height="20"/>
         <image name="Icon-home-20x20" width="20" height="20"/>
@@ -3594,7 +3595,7 @@
         <image name="SearchIcon" width="25" height="25"/>
         <image name="Setting-white" width="50" height="50"/>
         <image name="Share-White" width="50" height="50"/>
-        <image name="XbladeHomeBanner" width="390" height="145.66667175292969"/>
+        <image name="XbladeHomeBanner" width="390" height="145"/>
         <image name="backbar-1" width="25" height="25"/>
         <image name="delete" width="25" height="25"/>
         <image name="edit" width="25" height="25"/>

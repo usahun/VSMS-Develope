@@ -10,23 +10,39 @@ import UIKit
 import CoreLocation
 
 class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-   
     
-
-    @IBOutlet weak var tableView: UITableView!
+    //Properties
+    private var HomeTableView : UITableView!
     
+    //Methods and Handler
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBarItem()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-    
+        tableViewConfig()
+        self.view.backgroundColor = UIColor.white
         
     }
-    private func setupNavigationBarItem(){
+    
+    private func tableViewConfig()
+    {
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
         
+        HomeTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight))
+        let sellXib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
+        HomeTableView.register(sellXib, forCellReuseIdentifier: "HomePageTableViewCell")
+        HomeTableView.dataSource = self
+        HomeTableView.delegate = self
+        HomeTableView.backgroundColor = UIColor.red
+        
+        self.view.addSubview(HomeTableView)
+        
+    }
+    
+    private func setupNavigationBarItem()
+    {
         let logo = UIImage(named: "HamburgarIcon")
         let menu = UIButton(type: .system)
         menu.setImage(logo, for: .normal)
@@ -61,12 +77,16 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         self.navigationItem.rightBarButtonItem = barButton
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+  
+    //Table View Handler
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell", for: indexPath) as! HomePageTableViewCell
+      
+        return cell
     }
     
    
