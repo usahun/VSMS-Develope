@@ -26,6 +26,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         tableView?.register(cellnib, forCellReuseIdentifier: "photo")
        // sideMenuController?.delegate = self as! SideMenuControllerDelegate
         let menuBarButton = UIBarButtonItem(image: UIImage(named: "HamburgarIcon"), style: .done, target: self, action: #selector(menutap))
+        menuBarButton.tintColor = UIColor.lightGray
 //        let menubutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(menutap))
         self.navigationItem.leftBarButtonItem = menuBarButton
     }
