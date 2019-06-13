@@ -10,9 +10,9 @@ import UIKit
 import CoreLocation
 import SideMenuSwift
 
-class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-   
-
+class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,8 +22,13 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        //Register file nib
         let cellnib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
-        tableView?.register(cellnib, forCellReuseIdentifier: "photo")
+        tableView?.register(cellnib, forCellReuseIdentifier: "ImageSlide")
+        
+        let searchbar = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        tableView?.register(searchbar, forCellReuseIdentifier: "Searchbar")
+        
        // sideMenuController?.delegate = self as! SideMenuControllerDelegate
         let menuBarButton = UIBarButtonItem(image: UIImage(named: "HamburgarIcon"), style: .done, target: self, action: #selector(menutap))
         menuBarButton.tintColor = UIColor.lightGray
@@ -43,7 +48,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         menu.setImage(logo, for: .normal)
         
        // navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menu)
-        menu.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        menu.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
         menu.tintColor = UIColor.lightGray
         
         //logo
@@ -52,8 +57,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
     let logoImageView = UIImageView.init(image: logoImage)
     logoImageView.contentMode = .scaleAspectFit
        logoImageView.frame = CGRect(x:0, y: 0, width: 0, height: 0)
-        logoImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: 38).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 38).isActive = true
     //   (-40, 0, 150, 25)
       logoImageView.contentMode = .scaleAspectFit
      let imageItem = UIBarButtonItem.init(customView: logoImageView)
@@ -65,28 +70,45 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         let button = UIButton(type: .custom)
         //set image for button
         button.setImage(UIImage(named: "flatenglish"), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 40).isActive =  true
+        button.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
+        button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 30).isActive =  true
         
         let barButton = UIBarButtonItem(customView: button)
         //assign button to navigationbar
         self.navigationItem.rightBarButtonItem = barButton
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       let row = indexPath.row
+        if row == 0 {
+            return 150
+        }
+        return 80
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photo", for: indexPath)as! HomePageTableViewCell
+        let row = indexPath.row
+        if row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSlide", for: indexPath) as! HomePageTableViewCell
+            return cell
+        }else if row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Searchbar", for: indexPath) as! SearchTableViewCell
+            return cell
+        }
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier:"", for: indexPath)
         return cell
     }
     
-   
+    
 }
 
 
@@ -97,7 +119,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
 //    }
 //
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let size = sliderCollectionView.frame.size
+//        let size = SliderCollectionView.frame.size
 //        return CGSize(width: size.width, height: size.height)
 //    }
 //

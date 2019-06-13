@@ -9,52 +9,72 @@
 import UIKit
 
 class HomePageTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource{
-
-    @IBOutlet weak var ImagePage: UICollectionView!
+    
+    
+    @IBOutlet weak var SliderCollectionView: UICollectionView!
+   
+    
+    let imgArr = [UIImage(named: "Dream191"),
+                  UIImage(named: "Dream192"),
+                  UIImage(named: "Dream193")]
+    
     override func awakeFromNib() {
+       
         
         
-        
-        super.awakeFromNib()
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 10
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.minimumInteritemSpacing = 10
-        // layout.itemSize = CGSize(width: 70, height: 80)
+        layout.itemSize = CGSize(width: 500, height: 150)
         layout.scrollDirection = .horizontal
-        ImagePage.collectionViewLayout = layout
+        SliderCollectionView?.collectionViewLayout = layout
+        self.SliderCollectionView.delegate = self
+        self.SliderCollectionView.dataSource = self
+        setTimer()
         
-        ImagePage?.dataSource = self
-        ImagePage?.delegate = self
-        ImagePage.clipsToBounds = true
-        ImagePage.showsHorizontalScrollIndicator = false
-        ImagePage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        ImagePage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+        let cellphoto = UINib(nibName: "ImgeSlideCollectionViewCell", bundle: nil)
+        SliderCollectionView?.register(cellphoto, forCellWithReuseIdentifier: "Imagecell")
         
-        
-        let cellphoto = UINib(nibName: "PhotoSilderCollectionViewCell", bundle: nil)
-        ImagePage?.register(cellphoto, forCellWithReuseIdentifier: "PhotoSilderCollectionViewCell")
-        
-     
+  
         // Initialization code
+    }
+    
+    func setTimer() {
+        let _ = Timer.scheduledTimer(timeInterval: 5.0,
+                                     target: self, selector: #selector(autoSroll),
+                                     userInfo: nil,
+                                     repeats: true)
+        
+    }
+    
+    var x = 1
+    
+    @objc func autoSroll() {
+        if self.x < 2 {
+            let indexPath = IndexPath(item: x, section: 0)
+           self.SliderCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+           self.x = self.x + 1
+        }else {
+             self.x = 0
+            self.SliderCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.imgArr.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoSilderCollectionViewCell", for: indexPath) as! PhotoSilderCollectionViewCell
-        cell.PhotoHome.image = UIImage(named: "121logo")
+        let cell = SliderCollectionView.dequeueReusableCell(withReuseIdentifier: "Imagecell", for: indexPath) as! ImgeSlideCollectionViewCell
+        cell.Slideshow.image = self.imgArr[indexPath.row]
         return cell
-    }
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
 }
+
+

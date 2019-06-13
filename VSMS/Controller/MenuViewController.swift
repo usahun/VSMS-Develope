@@ -35,7 +35,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 7
     }
     
-   
+  
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SectionMenu
