@@ -10,11 +10,10 @@ import UIKit
 import CoreLocation
 import SideMenuSwift
 
-class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
-    
-    
-    @IBOutlet weak var tableView: UITableView!
+class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
+
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,29 +22,13 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
-        //Register file nib
         let cellnib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
-        tableView?.register(cellnib, forCellReuseIdentifier: "ImageSlide")
-        
-        let searchbar  = UINib(nibName: "SearchTableViewCell", bundle: nil)
-        tableView?.register(searchbar, forCellReuseIdentifier: "Searchbar")
-        
-        let discount = UINib(nibName: "DiscountTableViewCell", bundle: nil)
-        tableView.register(discount, forCellReuseIdentifier: "discount")
-        
-        let newly = UINib(nibName: "NewlyTableViewCell", bundle: nil)
-        tableView.register(newly, forCellReuseIdentifier: "newly")
-        
+        tableView?.register(cellnib, forCellReuseIdentifier: "photo")
        // sideMenuController?.delegate = self as! SideMenuControllerDelegate
         let menuBarButton = UIBarButtonItem(image: UIImage(named: "HamburgarIcon"), style: .done, target: self, action: #selector(menutap))
-        menuBarButton.tintColor = UIColor.lightGray
 //        let menubutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(menutap))
         self.navigationItem.leftBarButtonItem = menuBarButton
     }
-    
-  
     
     @objc func menutap() {
         sideMenuController?.revealMenu()
@@ -59,7 +42,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         menu.setImage(logo, for: .normal)
         
        // navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menu)
-        menu.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
+        menu.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         menu.tintColor = UIColor.lightGray
         
         //logo
@@ -68,8 +51,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
     let logoImageView = UIImageView.init(image: logoImage)
     logoImageView.contentMode = .scaleAspectFit
        logoImageView.frame = CGRect(x:0, y: 0, width: 0, height: 0)
-        logoImageView.widthAnchor.constraint(equalToConstant: 38).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: 38).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     //   (-40, 0, 150, 25)
       logoImageView.contentMode = .scaleAspectFit
      let imageItem = UIBarButtonItem.init(customView: logoImageView)
@@ -81,7 +64,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         let button = UIButton(type: .custom)
         //set image for button
         button.setImage(UIImage(named: "flatenglish"), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.heightAnchor.constraint(equalToConstant: 30).isActive =  true
         
@@ -90,7 +73,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         self.navigationItem.rightBarButtonItem = barButton
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,42 +96,17 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
     
     
     
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        
-        switch row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSlide", for: indexPath) as! HomePageTableViewCell
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Searchbar", for: indexPath) as! SearchTableViewCell
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier:"discount", for: indexPath) as! DiscountTableViewCell
-                return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "newly", for: indexPath) as! NewlyTableViewCell
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "")
-            return cell ?? UITableViewCell()
-        }
-//        if row == 0{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSlide", for: indexPath) as! HomePageTableViewCell
-//            return cell
-//        }else if row == 1{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "Searchbar", for: indexPath) as! SearchTableViewCell
-//            return cell
-//        }
-//        let cell = tableView.dequeueReusableCell(withIdentifier:"imgediscount", for: indexPath) as! DiscountTableViewCell
-//        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "photo", for: indexPath)as! HomePageTableViewCell
+        return cell
     }
     
-    
+   
 }
 
 
