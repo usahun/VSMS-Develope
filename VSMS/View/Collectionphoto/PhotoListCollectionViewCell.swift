@@ -14,6 +14,7 @@ class PhotoListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     

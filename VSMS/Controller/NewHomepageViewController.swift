@@ -107,10 +107,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         default:
             return 1
         }
-//        if row == 0 {
-//            return 150
-//        }
-//        return 80
+
     }
     
     
