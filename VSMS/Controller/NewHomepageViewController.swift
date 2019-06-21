@@ -14,6 +14,7 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
     
     
     @IBOutlet weak var tableView: UITableView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,20 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        
+        
         //Register file nib
         let cellnib = UINib(nibName: "HomePageTableViewCell", bundle: nil)
         tableView?.register(cellnib, forCellReuseIdentifier: "ImageSlide")
         
-        let searchbar = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        let searchbar  = UINib(nibName: "SearchTableViewCell", bundle: nil)
         tableView?.register(searchbar, forCellReuseIdentifier: "Searchbar")
+        
+        let discount = UINib(nibName: "DiscountTableViewCell", bundle: nil)
+        tableView.register(discount, forCellReuseIdentifier: "discount")
+        
+        let newly = UINib(nibName: "NewlyTableViewCell", bundle: nil)
+        tableView.register(newly, forCellReuseIdentifier: "newly")
         
        // sideMenuController?.delegate = self as! SideMenuControllerDelegate
         let menuBarButton = UIBarButtonItem(image: UIImage(named: "HamburgarIcon"), style: .done, target: self, action: #selector(menutap))
@@ -35,6 +44,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
 //        let menubutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(menutap))
         self.navigationItem.leftBarButtonItem = menuBarButton
     }
+    
+  
     
     @objc func menutap() {
         sideMenuController?.revealMenu()
@@ -79,16 +90,31 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         self.navigationItem.rightBarButtonItem = barButton
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        let row = indexPath.row
-        if row == 0 {
+        switch row {
+        case 0:
             return 150
+        case 1:
+            return 175
+        case 2:
+            return 180
+        case 3:
+            return 200
+        default:
+            return 1
         }
-        return 80
+//        if row == 0 {
+//            return 150
+//        }
+//        return 80
     }
+    
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -96,40 +122,37 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        if row == 0{
+        
+        switch row {
+        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSlide", for: indexPath) as! HomePageTableViewCell
             return cell
-        }else if row == 1{
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Searchbar", for: indexPath) as! SearchTableViewCell
             return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier:"discount", for: indexPath) as! DiscountTableViewCell
+                return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "newly", for: indexPath) as! NewlyTableViewCell
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "")
+            return cell ?? UITableViewCell()
         }
-       
-        let cell = tableView.dequeueReusableCell(withIdentifier:"", for: indexPath)
-        return cell
+//        if row == 0{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSlide", for: indexPath) as! HomePageTableViewCell
+//            return cell
+//        }else if row == 1{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "Searchbar", for: indexPath) as! SearchTableViewCell
+//            return cell
+//        }
+//        let cell = tableView.dequeueReusableCell(withIdentifier:"imgediscount", for: indexPath) as! DiscountTableViewCell
+//        return cell
     }
     
     
 }
 
 
-//extension NewViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let size = SliderCollectionView.frame.size
-//        return CGSize(width: size.width, height: size.height)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0.0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0.0
-//    }
-//
-//}
 

@@ -11,6 +11,11 @@ import UIKit
 class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var Search: UISearchBar!
     
+    @IBOutlet weak var btnbuy: UIButton!
+    
+    @IBOutlet weak var btnsell: UIButton!
+    @IBOutlet weak var btnrent: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
