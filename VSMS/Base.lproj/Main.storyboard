@@ -330,7 +330,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtl-CJ-yY1">
-                                        <rect key="frame" x="326" y="204" width="83" height="27"/>
+                                        <rect key="frame" x="330" y="204" width="79" height="27"/>
                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="wbV-3s-fdl"/>
@@ -943,7 +943,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-sH-7j2">
-                                                <rect key="frame" x="331" y="252" width="83" height="24"/>
+                                                <rect key="frame" x="335" y="252" width="79" height="24"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="1FR-RI-RVx"/>
@@ -1327,7 +1327,7 @@
                                                             <rect key="frame" x="8" y="120" width="368" height="25"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpW-eR-TTN">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="25"/>
                                                                     <state key="normal" title=" Transfer" image="reload">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
@@ -1336,7 +1336,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkr-hi-8jn">
-                                                                    <rect key="frame" x="139" y="0.0" width="64" height="25"/>
+                                                                    <rect key="frame" x="166" y="0.0" width="55" height="25"/>
                                                                     <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     <inset key="imageEdgeInsets" minX="-11" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     <state key="normal" title="Edit" image="edit">
@@ -1344,13 +1344,13 @@
                                                                     </state>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRg-2L-Rcx">
-                                                                    <rect key="frame" x="234" y="0.0" width="78" height="25"/>
+                                                                    <rect key="frame" x="252" y="0.0" width="69" height="25"/>
                                                                     <state key="normal" title="Delete" image="delete">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3Q-yr-gef" userLabel="btnoption">
-                                                                    <rect key="frame" x="343" y="0.0" width="25" height="25"/>
+                                                                    <rect key="frame" x="352" y="0.0" width="16" height="25"/>
                                                                     <state key="normal" image="icons8-share-25"/>
                                                                 </button>
                                                             </subviews>
@@ -3561,7 +3561,7 @@
                     <view key="view" contentMode="scaleToFill" id="Bcz-7w-LNT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="lY7-xN-3fe"/>
                     </view>
                 </viewController>

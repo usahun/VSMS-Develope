@@ -51,8 +51,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
     let logoImageView = UIImageView.init(image: logoImage)
     logoImageView.contentMode = .scaleAspectFit
        logoImageView.frame = CGRect(x:0, y: 0, width: 0, height: 0)
-        logoImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     //   (-40, 0, 150, 25)
       logoImageView.contentMode = .scaleAspectFit
      let imageItem = UIBarButtonItem.init(customView: logoImageView)
@@ -65,8 +65,8 @@ class NewHomepageViewController: UIViewController,UITableViewDataSource,UITableV
         //set image for button
         button.setImage(UIImage(named: "flatenglish"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 40).isActive =  true
+        button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 30).isActive =  true
         
         let barButton = UIBarButtonItem(customView: button)
         //assign button to navigationbar
