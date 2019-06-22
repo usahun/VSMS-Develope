@@ -8,9 +8,9 @@ target 'VSMS' do
  pod 'Alamofire'
    pod 'GoogleMaps'
    pod 'GooglePlaces'
-   pod 'SideMenuSwift'
+   pod 'SideMenuSwift', '= 1.0.0'
    #  pod 'LGSideMenuController'
- # pod 'Chatto', '= 3.4.0'
+   # pod 'Chatto', '= 3.4.0'
 #  pod 'ChattoAdditions', '= 3.4.0' # if you want to use the cells or the input component
 
   # Pods for VSMS
